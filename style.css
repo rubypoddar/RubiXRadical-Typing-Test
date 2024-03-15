@@ -1,0 +1,187 @@
+/* Import Google Font Archivo */
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+/* Add CSS styles for the top-center image */
+.top-center-image {
+    display: block;
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+/* Add some styles to ensure the background image covers the entire page */
+body {
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #000; /* Change font color to black */
+}
+
+.background-image {
+    display: none; /* Hide the background image by default */
+}
+
+/* Add some styles to the wrapper to make sure it contains the content */
+.wrapper {
+    display: flex;
+    flex-direction: column; /* Align items in a column */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Make wrapper cover the whole window */
+    background: url('https://i.pinimg.com/564x/77/28/f6/7728f6adea073820e8203e49b58a7c1b.jpg') center/cover;
+    color: #fff; /* Added color value */
+    border-radius: 10px;
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.2);
+    padding: 35px;
+}
+
+.typing-test-container {
+    width: 100%; /* Adjusted width to cover the whole window */
+    max-width: 600px; /* Limit the maximum width to 600px */
+    background-color: rgba(255, 255, 255, 0.8); /* Set a background color for better visibility */
+    padding: 20px;
+    margin-top: 50px; /* Adjust top margin as needed */
+    border-radius: 10px;
+    color: #000; /* Change font color to black */
+}
+
+::selection {
+  color: #fff;
+  background: deepskyblue;
+}
+
+.wrapper .input-field {
+  opacity: 0;
+  z-index: -999;
+  position: absolute;
+}
+
+.wrapper .content-box {
+  padding: 13px 20px 0;
+  border-radius: 10px;
+  border: 1px solid #bfbfbf;
+  background: url('https://i.pinimg.com/564x/b5/02/14/b502141f9a4fce60264d0be5b209293f.jpg') center/cover; /* Removed comment */
+}
+
+.typing-text::-webkit-scrollbar {
+  width: 0;
+}
+
+.typing-text p {
+  font-size: 25px;
+  text-align: justify;
+  letter-spacing: 1px;
+}
+
+.typing-text p span {
+  position: relative;
+}
+
+.typing-text p span.correct {
+  color: rgb(46, 5, 251);
+}
+
+.typing-text p span.incorrect {
+  color: #cb3439;
+  outline: 1px solid #fff;
+  background: #ffc0cb;
+  border-radius: 4px;
+}
+
+.typing-text p span.active {
+  color: deepskyblue;
+}
+
+.typing-text p span.active::before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  border-radius: 5px;
+  background: deepskyblue;
+  animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 1;
+  }
+}
+
+.content-box .content {
+  margin-top: 17px;
+  display: flex;
+  padding: 12px 0;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #bfbfbf;
+  line-break: auto;
+}
+
+.content button {
+  outline: none;
+  border: none;
+  width: 105px;
+  color: #fff;
+  padding: 8px 0;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  background: deepskyblue;
+  transition: transform 0.3s ease;
+}
+
+.content button:active {
+  transform: scale(0.97);
+}
+
+.content .result-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: calc(100% - 140px);
+  justify-content: space-between;
+}
+
+.result-details li {
+  display: flex;
+  height: 20px;
+  list-style: none;
+  position: relative;
+  align-items: center;
+}
+
+.result-details li:not(:first-child) {
+  padding-left: 22px;
+  border-left: 1px solid #bfbfbf;
+}
+
+.result-details li p {
+  font-size: 19px;
+}
+
+.result-details li span {
+  display: block;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+li span b {
+  font-weight: 500;
+}
+
+li:not(:first-child) span {
+  font-weight: 500;
+}
+
+.errors span {
+  color: #00008b;
+}
+
+.timeLeft span {
+  color: #8b0000;
+}
